@@ -1,0 +1,41 @@
+<div class="main-content  mt-0">
+  <div class="page-header align-items-start min-vh-75">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-header card-header-danger">
+          <h4 class="card-title">Create Category</h4>
+        </div>
+        <div class="card-body">
+          <form (submit)="submit()">
+
+            <div class="container">
+
+              <div class="row">
+                <div class="col-4">
+                  <label for="CategoryNameAr">Category Name Ar:</label>
+                  <div class="input-group input-group-outline mb-3">
+                    <input type="text" id="CategoryNameAr" name="CategoryNameAr" [(ngModel)]="category.categoryNameAr" class="form-control" required>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <label for="CategoryNameEn">Category Name En:</label>
+                  <div class="input-group input-group-outline mb-3">
+                    <input type="text" id="CategoryNameEn" name="CategoryNameEn" [(ngModel)]="category.categoryNameEn" class="form-control" required>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <label for="File">Image:</label>
+                  <input type="file" name="files" accept="image/*" (change)="onFileChanged($event)">
+                </div>
+
+              </div>
+              <button class="btn btn-primary" type="submit">Submit</button>
+              <button class="btn btn-primary" (click)="Cancel()">Cancel</button>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

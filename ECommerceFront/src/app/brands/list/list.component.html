@@ -1,0 +1,48 @@
+<div class="main-content  mt-0">
+  <div class="page-header align-items-start min-vh-80">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-header card-header-danger">
+          <h4 class="card-title"> Brands</h4>
+          <div class="text-center col-2">
+            <button [routerLink]="['./Create']" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Add New</button>
+          </div>
+
+        </div>
+        <div class="card-body">
+          <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+              <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                <h6 class="text-white text-capitalize ps-3">Brand List</h6>
+              </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+              <div class="table-responsive p-0">
+                <p-table [value]="brandList" [paginator]="true" [rows]="10" class="table align-items-center mb-0">
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th style="text-align: center;">Image</th>
+                      <th style="text-align: center;">BrandNameAr</th>
+                      <th style="text-align: center;">BrandNameEn</th>
+
+                    </tr>
+                  </ng-template>
+                  <ng-template pTemplate="body" let-brands>
+                    <tr>
+                      <td style="text-align: center;"><img [src]="createImgPath(brands.imagePath)" alt="profile picture" style="width:60px; height:60px;"></td>
+                      <td style="text-align: center;">{{ brands.brandNameAr }}</td>
+                      <td style="text-align: center;">{{ brands.brandNameEn }}</td>
+
+                    </tr>
+                  </ng-template>
+                </p-table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

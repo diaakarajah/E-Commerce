@@ -1,0 +1,88 @@
+<div class="main-content  mt-0">
+  <div class="page-header align-items-start min-vh-75">
+    <div class="container-fluid">
+      <div class="card">
+        <div  class="card-header card-header-danger">
+          <h4 class="card-title">Create Product</h4>
+        </div>
+        <div class="card-body">
+          <form (submit)="submit()">
+
+            <div class="container">
+              <div class="row">
+                <div class="col-4">
+                  <label class="form-label">Product Name Ar:</label>
+
+                  <div class="input-group input-group-outline mb-3">
+                    <input type="text" id="ProductNameAr" name="ProductNameAr" [(ngModel)]="product.ProductNameAr" class="form-control" required>
+                  </div>
+                </div>
+
+                <div class="col-4">
+                  <label class="form-label">Product Name En:</label>
+
+                  <div class="input-group input-group-outline mb-3">
+                    <input type="text" id="ProductNameEn" name="ProductNameEn" [(ngModel)]="product.ProductNameEn" class="form-control" required>
+                  </div>
+                </div>
+
+                <div class="col-4">
+                  <label for="Description">Description:</label>
+                  <div class="input-group input-group-outline mb-3">
+
+                    <input type="text" id="Description" name="Description" [(ngModel)]="product.Description" class="form-control" required>
+                  </div>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-4">
+                  <label class="form-label">Category:</label>
+
+                  <div class="input-group input-group-outline mb-3">
+                    <p-dropdown id="CategoryId" name="CategoryId" [options]="categoryItems" [(ngModel)]="product.CategoryId" placeholder="Select Category" [virtualScroll]="true" [filter]="true" class="form-control"></p-dropdown>
+
+                  </div>
+                </div>
+
+                <div class="col-4">
+                  <label for="BrandId">Brand :</label>
+                  <div class="input-group input-group-outline mb-3">
+
+                    <p-dropdown id="BrandId" name="BrandId" [options]="brandItems" [(ngModel)]="product.BrandId" placeholder="Select Brand" [virtualScroll]="true" [filter]="true" class="form-control"></p-dropdown>
+                  </div>
+                </div>
+
+                <div class="col-4">
+                  <label for="Price">Price:</label>
+                  <div class="input-group input-group-outline mb-3">
+
+                    <input type="number" id="Price" name="Price" [(ngModel)]="product.Price" class="form-control" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-4">
+                  <label for="Quantity">Quantity:</label>
+                  <div class="input-group input-group-outline mb-3">
+
+                    <input type="number" id="Quantity" name="Quantity" [(ngModel)]="product.Quantity" class="form-control" required>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <label for="File">Image:</label>
+                  <input type="file" name="files" accept="image/*" (change)="onFileChanged($event)">
+                </div>
+              </div>
+              <button class="btn btn-primary" type="submit">Submit</button>
+              <button class="btn btn-primary" (click)="Cancel()">Cancel</button>
+
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
